@@ -20,20 +20,19 @@
 
         {{-- Logo --}}
         <div class="{{ $auth_type ?? 'login' }}-logo">
-            <a href="{{ $dashboard_url }}">
-                <img src="{{ asset(config('adminlte.logo_img')) }}" height="50">
-                {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
+            <a href="/">
+                <img width="200px" height="70px" src="{{asset('img/logo.png')}}" alt="">
             </a>
         </div>
 
         {{-- Card Box --}}
-        <div class="card {{ config('adminlte.classes_auth_card', 'card-outline card-primary') }}">
+        <div class="card  {{ config('adminlte.classes_auth_card', 'card-outline card-success') }} card-outline card-success">
 
             {{-- Card Header --}}
             @hasSection('auth_header')
                 <div class="card-header {{ config('adminlte.classes_auth_header', '') }}">
                     <h3 class="card-title float-none text-center">
-                        @yield('auth_header')
+                       Bienvenido
                     </h3>
                 </div>
             @endif

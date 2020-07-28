@@ -6,6 +6,13 @@
 
 require('./bootstrap');
 
+// ES6 Modules or TypeScript
+import Swal from 'sweetalert2'
+
+// CommonJS
+window.Swal = require('sweetalert2');
+
+require('jquery-validation');
 window.Vue = require('vue');
 
 /**

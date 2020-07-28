@@ -17,8 +17,8 @@ class Tickets extends Migration
             $table->id();
             $table->string('codigo');
             $table->date('fecha');
-            $table->dateTime('hora');
-            $table->foreignId('user_id')->constrained('users');
+            $table->time('hora');
+            $table->foreignId('user_id')->nullable()->constrained('users');
             $table->foreignId('type_client_id')->constrained('type_client');
             $table->foreignId('state_id')->constrained('states');
             $table->foreignId('service_id')->constrained('services');

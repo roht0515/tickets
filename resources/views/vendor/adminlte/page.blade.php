@@ -8,6 +8,13 @@
     @php( $def_container_class = 'container-fluid' )
 @endif
 
+
+{{-- LARAVEL MIX --}}
+@push('adminlte_css_stack')
+    @stack('components-css')
+    @yield('css_custom_styles')
+@endpush
+
 @section('adminlte_css')
     @stack('css')
     @yield('css')
@@ -68,3 +75,8 @@
     @stack('js')
     @yield('js')
 @stop
+
+@push('adminlte_js_stack')
+    @stack('components-js')
+    @yield('js_custom_scripts')
+@endpush

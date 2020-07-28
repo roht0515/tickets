@@ -8,11 +8,11 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="stylesheet" href="{{ mix(config('adminlte.laravel_mix_css_path', 'css/app.css')) }}">
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: rgba(3, 78, 3, 0.459);
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -49,7 +49,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #000000;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -79,11 +79,30 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="card">
-                    <button class="btn btn-danger">das</button>
+            <div class="content container col-10">
+                <div class="card card-outline card-success">
+                    <div class=" card-header">
+                        <img width="600px" height="150px" src="{{asset('img/logo.png')}}" alt="">
+                    </div>
+                    <div class ="card-body">
+                       @foreach ($services as $item)
+                        <button style="width: 200px;  font-size: 20px;" onclick="Send({{$item->id}})" class="btn btn-success m-4 pt-4 pb-4 "><label class=""  for="">{{$item->name}}</label></button>
+                       @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </body>
+
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+    <script>
+        function Send(id)
+        {
+            window.location.href="/selection" + id;
+        }
+    </script>
 </html>

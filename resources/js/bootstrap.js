@@ -11,9 +11,18 @@ try {
     window.$ = window.jQuery = require('jquery');
     require('overlayscrollbars');
     require('../../vendor/almasaeed2010/adminlte/dist/js/adminlte');
+    require( 'datatables.net-bs4' );
+    require( 'datatables.net-autofill-bs4' );
+    require( 'datatables.net-buttons-bs4' );
+    require( 'datatables.net-responsive-bs4' );
+    require( 'datatables.net-scroller-bs4' );
+    require( 'datatables.net-searchpanes-bs4' );
+    require( 'datatables.net-select-bs4' );
     
     require('bootstrap');
-} catch (e) {}
+} catch (e) {
+    console.log(e);
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
